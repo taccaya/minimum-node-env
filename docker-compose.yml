@@ -1,12 +1,12 @@
 version: '3'
 services:
   web:
-    build: node
-    image: "node-minimum"
-    container_name: "node-minimum"
+    build: node-environment
+    image: "node-minimum-environment"
+    container_name: "node-minimum-environment"
     tty: true
     volumes: 
-      - ./node/app:/app
+      - ./node-environment/app:/usr/src/app
     ports:
       - "8080:8080" 
-    command: sh -c 'chown -R 1000:1000 /app && sh'
+    command: sh -c 'chown -R 1000:1000 /usr/src/app && sh'
